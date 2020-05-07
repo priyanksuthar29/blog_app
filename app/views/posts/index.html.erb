@@ -1,0 +1,18 @@
+<h1>Welcome</h1>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @post.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.body %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= post.comments.count %> comments</td>
+    </tr>
+  <% end %>
+</table>

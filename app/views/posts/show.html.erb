@@ -1,0 +1,18 @@
+
+<h1>Title:  <%= @post.title %></h1>
+<div class="post-content">
+<p>
+  <strong>Text:</strong>
+  <%= @post.body %>
+</p>
+</div>
+<div class="post-comment-area">
+<p>Total Comments: <%= @post.comments.count %></p>
+
+<%= render @post.comments %>
+</div>
+
+<h2>Leave a reply</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Home', posts_path %>
